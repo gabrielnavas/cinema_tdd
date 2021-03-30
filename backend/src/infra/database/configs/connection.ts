@@ -5,9 +5,9 @@ const pgpInstance = pgp()
 const database = pgpInstance({
   host: 'localhost',
   port: 5432,
-  database: 'cinema',
+  database: 'postgres',
   user: 'postgres',
-  password: ''
+  password: '123'
 })
 
 export { database }
