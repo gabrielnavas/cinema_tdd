@@ -22,6 +22,7 @@
     "pg-promise": "^10.9.5"
   },
   "scripts": {
-    "test": "jest --no-cache --watchAll"
+    "test": "jest --no-cache --watchAll --detectOpenHandles",
+    "docker:create_test": "sh ./scripts/database/test/create_docker.sh"
   }
 }
