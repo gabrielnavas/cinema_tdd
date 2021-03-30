@@ -16,7 +16,7 @@ export class EmployeePosgresRepository implements EmployeeRepository {
       employee.name.lastName,
       employee.address.streetName,
       employee.address.streetNumber,
-      employee.address.streetNumber,
+      employee.address.district,
       employee.birthDate
     ]
     await database.none(sql, params)
