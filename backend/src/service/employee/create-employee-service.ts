@@ -6,7 +6,7 @@ export class CreateEmployeService {
     private readonly employeeRepository: EmployeeRepository
   ) {}
 
-  async handle (employee: Employee) {
+  async handle (employee: Employee): Promise<void> {
     await this.employeeRepository.insert(employee)
   }
 }
