@@ -1,4 +1,4 @@
-import { Address, Employee, Name } from '../../../models/employee'
+import { employeModelFactory } from '../../../models/employee'
 import { database } from '../configs/connection'
 import { EmployeePosgresRepository } from './employee-repository'
 
@@ -14,11 +14,18 @@ describe('EmployeeRepository', () => {
   })
 
   test('should create new employee in database', async () => {
-    const employee = new Employee(
-      new Name('gabriel', 'navas'),
-      new Address('street one', 22, 'poll mc district'),
-      new Date(2000, 1, 1)
-    )
+    const employee = employeModelFactory({
+      name: {
+        firstName: 'gabriel',
+        lastName: 'navas'
+      },
+      address: {
+        streetName: 'street one',
+        streetNumber: 22,
+        district: 'poll mc district'
+      },
+      birthDate: new Date(2000, 1, 1)
+    })
     const repository = new EmployeePosgresRepository()
     await repository.insert(employee)
     const query = await selectAllEmployee()
