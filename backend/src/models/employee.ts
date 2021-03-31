@@ -9,7 +9,7 @@ type Address = {
   district: Readonly<string>
 }
 
-type Employee = {
+export type Employee = {
   name: Readonly<Name>,
   address: Readonly<Address>,
   birthDate: Readonly<Date>
